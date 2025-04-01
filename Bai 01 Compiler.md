@@ -4,7 +4,7 @@
     * #include< >: trong trường hợp này thì hệ thống sẽ tìm trong các thức mục cài đặt gốc ở bất kỳ đâu trong máy tính để lấy file đó
 # 2. Quá trình compiler
     Khi các chương trình viết bằng các ngôn ngữ bậc cao như C/C++ run được thì sẽ phải trả qua các bước sau:
-    ![alt text](D:\c++\Advance_C\develop\image-1.png)
+    ![alt text](develop\image-1.png)
     Bước1: Tiền xử lý (Preprocessing)
     gcc -E main.c -o main.i
 
