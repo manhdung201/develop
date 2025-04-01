@@ -21,7 +21,7 @@
     gcc -S main.i -o main.s
 
     dịch mã nguồn C sang hợp ngữ (assembly) để máy tính có thể hiểu được và thực thi các bước sau.
-    vd: ![image](https://github.com/user-attachments/assets/e01a79c8-7a3c-4aac-ab8f-8a487ddb9d6b)
+    ![image](https://github.com/user-attachments/assets/e01a79c8-7a3c-4aac-ab8f-8a487ddb9d6b)
     Bước 4: Linker liên kết
     gcc main.o main1.o main2.o -o program
         liên kết các file .o lại thành 1 file thực thi .exe
