@@ -4,7 +4,7 @@
     * #include< >: trong trường hợp này thì hệ thống sẽ tìm trong các thức mục cài đặt gốc ở bất kỳ đâu trong máy tính để lấy file đó
 # 2. Quá trình compiler
     Khi các chương trình viết bằng các ngôn ngữ bậc cao như C/C++ run được thì sẽ phải trả qua các bước sau:
-    ![image](https://github.com/user-attachments/assets/226ebc9f-0a49-4a96-a9dc-8913c9cb2b41)
+   ![image](https://github.com/user-attachments/assets/08cf75be-4c49-44e8-affb-d0aade3122bc)
 
     Bước1: Tiền xử lý (Preprocessing)
     gcc -E main.c -o main.i
@@ -22,7 +22,7 @@
     gcc -S main.i -o main.s
 
     dịch mã nguồn C sang hợp ngữ (assembly) để máy tính có thể hiểu được và thực thi các bước sau.
-    vd: ![image-1](https://github.com/user-attachments/assets/6b17aad9-a274-415a-b2b5-2450c1b526ad)
+    vd:
 
     Bước 4: Linker liên kết
     gcc main.o main1.o main2.o -o program
@@ -31,4 +31,5 @@
      ./program
 
      Tóm tắt:
-     ![image-2](https://github.com/user-attachments/assets/218fd256-a02f-4ecc-b9d3-de3420403a73)
+     ![image-2](https://github.com/user-attachments/assets/22abc2ff-c701-44e3-8afd-acaffebc857e)
+
