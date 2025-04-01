@@ -3,7 +3,8 @@
     mà chúng ta cần thêm vào chương trình.
     * #include" ": khi file include chúng ta đặt trong " ", thì chương trình, hệ thống sẽ tìm trong folder của project 
     hiện tại có file đó hay không và thay thế vào chương trình.
-    * #include< >: trong trường hợp này thì hệ thống sẽ tìm trong các thức mục cài đặt gốc ở bất kỳ đâu trong máy tính để lấy file đó
+    * #include< >: trong trường hợp này thì hệ thống sẽ tìm trong các thức mục cài đặt gốc ở bất kỳ đâu 
+    trong máy tính để lấy file đó
 # 2. Quá trình compiler
     Khi các chương trình viết bằng các ngôn ngữ bậc cao như C/C++ run được thì sẽ phải trả qua các bước sau:
    ![image](https://github.com/user-attachments/assets/08cf75be-4c49-44e8-affb-d0aade3122bc)
