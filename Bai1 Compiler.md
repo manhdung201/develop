@@ -23,6 +23,7 @@
 
     dịch mã nguồn C sang hợp ngữ (assembly) để máy tính có thể hiểu được và thực thi các bước sau.
     vd:
+![image-1](https://github.com/user-attachments/assets/4c1ae2dd-84e0-48e8-9868-23cf5ef6b159)
 
     Bước 4: Linker liên kết
     gcc main.o main1.o main2.o -o program
@@ -31,5 +32,5 @@
      ./program
 
      Tóm tắt:
-     ![image-2](https://github.com/user-attachments/assets/22abc2ff-c701-44e3-8afd-acaffebc857e)
+![image-2](https://github.com/user-attachments/assets/d18f06a6-3c3e-4646-9430-64f46ade467d)
 
