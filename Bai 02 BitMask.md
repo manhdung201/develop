@@ -6,10 +6,10 @@
 # 2. Ứng dụng của bitmask và các toán tử logic, phép dịch bit
 ## 2.1 Phép dịch bit
   Được sử dụng khi ta muốn đọc/ghi/xoá/kiểm tra 1 bit
-  + Dịch trái << : khi ta cần đẩy các bit từ phải sang trái
-![image](https://github.com/user-attachments/assets/362ee055-e494-428d-a98d-eab40de8eab9)
+  + Dịch trái << : khi ta cần đẩy các bit từ phải sang trái  
+![image](https://github.com/user-attachments/assets/362ee055-e494-428d-a98d-eab40de8eab9)  
 
-  + Dịch phải:
+  + Dịch phải: khi ta cần dịch bit từ trái sang phải  
 ![image](https://github.com/user-attachments/assets/db93c385-7682-411d-8e92-261ad609acfa)
 
 
