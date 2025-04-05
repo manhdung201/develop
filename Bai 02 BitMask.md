@@ -8,4 +8,9 @@
   Được sử dụng khi ta muốn đọc/ghi/xoá/kiểm tra 1 bit
   + Dịch trái << : khi ta cần đẩy các bit từ phải sang trái
 ![image](https://github.com/user-attachments/assets/362ee055-e494-428d-a98d-eab40de8eab9)
+
   + Dịch phải:
+![image](https://github.com/user-attachments/assets/db93c385-7682-411d-8e92-261ad609acfa)
+
+
+
