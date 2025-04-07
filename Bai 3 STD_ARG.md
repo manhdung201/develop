@@ -2,7 +2,7 @@
 là macro hoạt động như 1 hàm, được định nghĩa bằng #define
 Nó sẽ thay thế nội dung mà nó định nghĩa tại thời điểm biên dịch
 Các dòng của hàm được định nghĩa bên trong macro sẽ kết thúc bằng dấu \
-### Ví dụ cách định nghĩa và gọi hàm thông qua macro   
+## Ví dụ cách định nghĩa và gọi hàm thông qua macro   
 #include <stdio.h>
 #define CREATE_FUNC(name, arg) \
     void name()                \
