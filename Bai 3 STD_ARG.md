@@ -88,4 +88,8 @@ ví dụ: Tạo ra macro để định nghĩa 1 hàm tính tổng các đối s�
 * va_end: giải phóng biến lưu trữ danh sách
 ## 2.2 Cách sử dụng để thao tác với 1 danh sách đối số
 a) Khi biết trước kích thước
+![image](https://github.com/user-attachments/assets/6dd8fde0-05ef-4990-b95b-26d6ae06f3b6)
+
+b) Khi sử dụng giá trị để xác định điểm dừng của danh sách  
+![image](https://github.com/user-attachments/assets/faecfafd-b34c-45c9-af95-10a1a294832a)
 
