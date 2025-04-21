@@ -7,19 +7,19 @@
 ## 2.1 Phép dịch bit
   Được sử dụng khi ta muốn đọc/ghi/xoá/kiểm tra 1 bit
   + Dịch trái << : khi ta cần đẩy các bit từ phải sang trái  
-![image](https://github.com/user-attachments/assets/362ee055-e494-428d-a98d-eab40de8eab9)  
+![image](https://github.com/user-attachments/assets/362ee055-e494-428d-a98d-eab40de8eab9)    
 
   + Dịch phải: khi ta cần dịch bit từ trái sang phải  
-![image](https://github.com/user-attachments/assets/db93c385-7682-411d-8e92-261ad609acfa)
+![image](https://github.com/user-attachments/assets/db93c385-7682-411d-8e92-261ad609acfa)    
 
 ## 2.2 Sử dụng phép AND và NOT
-  ![image](https://github.com/user-attachments/assets/b5f18aa8-ac9a-4ceb-89db-09ae444627a7)    
+  ![image](https://github.com/user-attachments/assets/b5f18aa8-ac9a-4ceb-89db-09ae444627a7)      
   a, Đọc giá trị của 1 bit
     - Ta sử dụng cơ chế bitmask và thực hiện phép AND tại vị trí mà ta muốn đọc trạng thía bit và
     phép dịch trái << như đoạn code
-    - Nếu kết quả là 1 số khác 0 thì ta sẽ trả giá trị 1 và  ngược lại.
+    - Nếu kết quả là 1 số khác 0 thì ta sẽ trả giá trị 1 và  ngược lại.  
         ![image](https://github.com/user-attachments/assets/672b5f65-c41a-4968-9994-923e64dc62b1)    
-        ![image](https://github.com/user-attachments/assets/5c29bb1b-8fa1-425a-9d67-4bb2a6f2012c)    
+        ![image](https://github.com/user-attachments/assets/5c29bb1b-8fa1-425a-9d67-4bb2a6f2012c)      
         bitmask = 1 (1 << position) tạo ra 1 bitmask với bit ở vị trí position là 1, còn lại là 0
         num & (1 << position) sẽ giữ lại bit ở vị trí cần kiểm tra
         Nếu kết quả khác 0 -> bit đó là 1, ngược lại là 0.
