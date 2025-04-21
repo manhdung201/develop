@@ -30,14 +30,14 @@
     - Ta sẽ thực hiện dịch >> với số lần tương ướng với vị trí bit mà ta muốn lấy ra mà AND với bit mask  
       ![image](https://github.com/user-attachments/assets/3d92f809-b337-42b5-8dec-f9507996f4d1)   
       🧠 Từng bước hoạt động:  
-      num >> pos  
+     *  num >> pos  
       Dịch phải num đi pos bit, đưa bit cần đọc về vị trí thấp nhất (LSB – bit 0).  
-      - Ví dụ:   
-        num = 0b00001100, pos = 2 → num >> 2 = 0b00000011    
-        & bitmask (bitmask = 1)    
-        Lấy bit thấp nhất sau khi dịch phải.    
-        Nếu bit đó là 1 → trả về 1, nếu là 0 → trả về 0.    
-      - ví dụ:    
+      Ví dụ:   num = 0b00001100, pos = 2 → num >> 2 = 0b00000011    
+     *  & bitmask (bitmask = 1)    
+      Lấy bit thấp nhất sau khi dịch phải.    
+      Nếu bit đó là 1 → trả về 1, nếu là 0 → trả về 0. 
+    
+  - ví dụ:    
         get_bit(12, 2)  
         12 = 00001100  
         Dịch phải 2 bit: 00000011  
