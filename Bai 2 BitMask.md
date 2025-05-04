@@ -45,11 +45,11 @@
 
 ********** chốt: Việc dử dụng phép dịch bít sang trái or phải kêt hợp với toàn tử AND dùng để đọc giá trị của 1 bit
 
-   c, Reset giá trị của bit
-    - Đầu tiên ta sẽ sử dụng bitmask và dịch sang trái << đến vị trí của bit mà ta muốn reset
-    - Sau đó ta sẽ dử dụng phép NOT để đảo trạng thái các bit
-    - Cuối cùng là thực hiện phép AND với kết quả trên ta sẽ reset được bit ở vị trí mà ta muốn, trong khi các giá trị của bit 
-    khác được giữ nguyên.
+   c, Reset giá trị của bit  
+    - Đầu tiên ta sẽ sử dụng bitmask và dịch sang trái << đến vị trí của bit mà ta muốn reset    
+    - Sau đó ta sẽ dử dụng phép NOT để đảo trạng thái các bit    
+    - Cuối cùng là thực hiện phép AND với kết quả trên ta sẽ reset được bit ở vị trí mà ta muốn, trong khi các giá trị của bit     
+    khác được giữ nguyên.    
         ![image](https://github.com/user-attachments/assets/e0b916fc-c14d-49af-8e2b-a6447ac63e82)    
 
 ## 2.3 Sử dụng phép OR
