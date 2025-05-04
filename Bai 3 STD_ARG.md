@@ -139,15 +139,15 @@ d) Được định nghĩa trong 1 struct
 ## 3.1 Cách sử dụng 
 ### a) Kiểm tra giá trị có hợp lệ
 Sử dụng trực tiếp hàm assert
-    ```c
-    #include<assert.h>
-    #include<stdio.h>
-    
-    double divide(int mau,int tu){
-        assert(mau != 0 && "mau phai khac 0"); //nội dung bên trong sẽ được in ra nếu giá trị không hợp lệ
-        return (double)mau/tu;
-    }
-    int main(){
-        double result = divide(0,21); 
-        printf("%.2f",result);
-    }
+```c
+#include<assert.h>
+#include<stdio.h>
+
+double divide(int mau,int tu){
+    assert(mau != 0 && "mau phai khac 0"); //nội dung bên trong sẽ được in ra nếu giá trị không hợp lệ
+    return (double)mau/tu;
+}
+int main(){
+    double result = divide(0,21); 
+    printf("%.2f",result);
+}
