@@ -94,7 +94,7 @@ b) Khi sử dụng giá trị để xác định điểm dừng của danh sách
 ![image](https://github.com/user-attachments/assets/faecfafd-b34c-45c9-af95-10a1a294832a)   
 
 c) Sử dụng pointer để xác định điểm dùng của danh sách
-
+        
         #include <stdio.h>
         #include <stdarg.h>
 
@@ -151,3 +151,20 @@ int main(){
     double result = divide(0,21); 
     printf("%.2f",result);
 }
+```
+Sử dụng hàm assert thông qua macro
+```c
+#include<assert.h>
+#include<stdio.h>
+
+#define LOG(condition,cmd) assert(condition && #cmd) // ký tự # cho phép chuẩn hóa lên chuỗi
+
+double divide(int mau,int tu){
+    LOG(mau=0,mau phai khac 0);
+    return (double)mau/tu;
+}
+int main(){
+    double result = divide(0,21); 
+    printf("%.2f",result);
+}
+```
