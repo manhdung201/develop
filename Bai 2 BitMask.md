@@ -57,7 +57,7 @@
   ![image](https://github.com/user-attachments/assets/2750dcb0-b05c-44b8-a9a7-db0bfded0c0f)  
 
   a, set giá trị của 1 bit
-  -  Ta sẽ sử dụng bitmask và dịch trái đến vị trí muốn set giá trị lên 1 và thực hiện phép OR
+  -  Ta sẽ sử dụng bitmask và dịch trái đến vị trí muốn set giá trị lên 1 và thực hiện phép OR    
         ![image](https://github.com/user-attachments/assets/7f58dcb9-37b7-4f4c-b0d6-5be7527deb41)
 ## 2.4 Sử dụng phép XOR
 ![image](https://github.com/user-attachments/assets/62690482-374f-43c3-9435-96e153e3ad8a)    
