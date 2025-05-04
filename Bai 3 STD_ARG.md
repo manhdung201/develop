@@ -87,7 +87,7 @@ ví dụ: Tạo ra macro để định nghĩa 1 hàm tính tổng các đối s�
 * va_copy: trỏ và địa chỉ các đối số trong biến danh sách
 * va_end: giải phóng biến lưu trữ danh sách
 ## 2.2 Cách sử dụng để thao tác với 1 danh sách đối số
-a) Khi biết trước kích thước
+a) Khi biết trước kích thước    
 ![image](https://github.com/user-attachments/assets/6dd8fde0-05ef-4990-b95b-26d6ae06f3b6)   
 
 b) Khi sử dụng giá trị để xác định điểm dừng của danh sách  
@@ -131,3 +131,23 @@ d) Được định nghĩa trong 1 struct
 
 ![image](https://github.com/user-attachments/assets/5c96f887-1b1a-497a-bb03-7f3f8b9225ba)
 
+## 3 Thư viện ASSERT    
+    Đây là thư viện cung cấp các hàm giúp ta thiết kế các mã lỗi để giúp cho quá trình debug 
+    và sửa lỗi nhanh chóng hiệu quả. Với các tính năng như:
+        - Nó cho ta biết đó là loại lỗi gì? nằm ở đâu trong chương trình?
+        - Dừng hẳn chương trình nếu phát hiện lỗi.
+## 3.1 Cách sử dụng 
+### a) Kiểm tra giá trị có hợp lệ
+Sử dụng trực tiếp hàm assert
+    ```c
+    #include<assert.h>
+    #include<stdio.h>
+    
+    double divide(int mau,int tu){
+        assert(mau != 0 && "mau phai khac 0"); //nội dung bên trong sẽ được in ra nếu giá trị không hợp lệ
+        return (double)mau/tu;
+    }
+    int main(){
+        double result = divide(0,21); 
+        printf("%.2f",result);
+    }
