@@ -168,3 +168,20 @@ int main(){
     printf("%.2f",result);
 }
 ```
+### b) Kiểm tra giá trị có nằm trong khoảng cho phép
+```c
+#include<assert.h>
+#include<stdio.h>
+
+#define LOG_IN_RANGE(val,min,max) assert((val) >= (min) && (val) <= (max))
+
+void check_inRange(int val){
+    LOG_IN_RANGE(val,1,10);
+    printf("%d in range",val);
+
+}
+int main(){
+        check_inRange(154);
+}
+```
+
