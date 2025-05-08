@@ -75,3 +75,168 @@ kết quả
 Ứng dụng: khi ta cần truyển 1 mảng vào trong hàm để xử lý thfi ta cần truyền địa chỉ của nó và dùng 1 pointer
 như là tham số cả hàm, lúc này pointer sẽ trỏ tới địa chỉ của mảng mà ta muốn xử lý chứ ko phải cần truyển toàn bộ
 mảng vào hàm làm tốn tài nguyên của chương trình.
+
+## 2.2 Pointer to constant
+Pointer tới vùng nhớ có chức năng read-only mà không thể thay đổi giá trị tại địa chỉ đó. Tuy nhiên nó có thể trỏ tới địa chỉ khác
+```c
+int a = 23, b = 78;
+const int* p = &a;
+printf("truoc *p: %d\n",*p);
+//*p = 23; -> sai
+p = &b;
+printf("sau *p: %d\n",*p);
+```
+kết quá
+```
+truoc: 23
+sau: 78
+```
+Ứng dụng: tạ có thể sử dụng con trỏ hằng để bảo vệ dữ liệu quan trọng mà không muón bị tác động thay đổi trong quá trình thực
+thi chương trình.
+
+## 2.3 Constant pointer (Hằng con trỏ)
+pointer có thể thay đổi giá trị của địa chỉ mà nó trỏ tới nhưng không thể trỏ sang vùng nhớ khác
+```c
+int a = 23, b = 78;
+int* const p = &a;
+printf("truoc *p: %d\n",*p);
+//p = &b; -> sai
+*p = 45;
+printf("sau *p: %d\n",*p);
+```
+kết quả
+```
+truoc: 23
+sau: 45
+```
+Ứng dụng: Hằng con trỏ có thể được dùng để lưu trữ địa chỉ của 1 thanh ghi và chỉ thao tác với giá trị trên thanh ghi đó,
+giúp tách biệt và xử lý chính xác trên thanh ghi mà ta mong muốn.
+
+## 2.4 VOID POINTER (con trỏ vô định)
+Con trỏ có thể trỏ tới bất kỳ dữ liệu nào
+- Con trỏ p dưới đây sau khi trỏ tới biến a sẽ được ép lại theo kiểu dữ liệu mà nó trỏ tới và dùng
+toán tử truy xuất * để lấy giá trị tại địa chỉ đó.
+```c
+int a = 43;
+void* p = &a;
+printf("%d",*((int*)p));
+```
+- Con trỏ VOID có cũng có thể dùng để trỏ tới 1 mảng lưu trữ nhiều giá trị đa dữ liệu
+```c
+    double c = 765656.65653;
+    float d = 23.54;
+    int e = 21;
+    char f = 'e';
+    void* ph[] = {&c,&d,&e,&f};
+    printf("c = %lf\n",*((double*)ph[0]));
+    printf("d = %.2f\n",*((float*)ph[1]));
+    printf("e = %d\n",*((int*)ph[2]));
+    printf("f = %c\n",*((char*)ph[3]));
+```
+kết quả
+```
+c = 765656.656530
+d = 23.54
+e = 21
+f = e
+```
+Ứng dụng: Con trỏ void có thể được dùng truyền nhiều loại dữ liệu khác nhau mà không cần phải viết lại hàm cho mỗi loại kiểu
+dữ liệu riêng biệt, giúp tối ưu và rút gọn chương trình.
+
+## 2,5 Function pointer (con trỏ hàm)
+pointer lưu địa chỉ của một  hàmm có cấu trúc
+```c
+Cách khai báo: (*pointer_name)(input parameter)
+```
+Ta có thể gọi 1 hàm thông qua con trỏ như sau:
+```c
+void print(){
+  printf("hello world");
+}
+int main(){
+  void (*ptr)();
+  ptr = print; //gán địa chỉ hàm print cho con trỏ ptr
+  ptr(); //gọi con trỏ ptr để thực hiện hàm print
+}
+```
+Ta có thể gọi nhiều hàm thông qua việc trỏ tới từng hàm:
+CÁCH1
+```c
+//định nghĩa các hàm
+void Tong(int a,int b){
+    printf("%d + %d = %d\n",a,b,a + b);
+}
+void Hieu(int a,int b){
+    printf("%d - %d = %d\n",a,b,a - b);
+}
+void Tich(int a,int b){
+    printf("%d x %d = %d\n",a,b,a*b);
+
+}
+void Thuong(int a,int b){
+    if(b != 0)
+       printf("%d / %d = %.2f\n",a,b,(float)a/b);
+    else printf("value of b is invalid\n");
+}
+```
+trong hàm main ta khai báo 1 con trỏ kiểu void với tham số truyền vào lần lượt trỏ tới từng hàm và
+truyển vào các giá trị để thực thi sau void(*operator)(int, int)
+```c
+int main(){
+  void (*operator)(int,int);
+  operator = Tong;
+  operator(34,56);
+
+  operator = Hieu;
+  (*operator)(84,96);
+
+  operator = Tich;
+  operator(34,5);
+
+  operator = Thuong;
+  operator(34,12);
+  return 0;
+}
+```
+kết quả
+```
+34 + 56 = 90
+84 - 96 = -12
+34 x 5 = 170
+34 / 12 = 2.83
+```
+CÁCH 2
+- Ngoài ra ta cũng có thể sử dụng con trỏ hàm như 1 đối số truyền vào, bằng cách
+```c
+void Operator(void (*op)(int,int),int a,int b){
+    op(a,b);
+}
+```
+- Ta sẽ gọi hàm trên ở trong main, và lần lượt truyền địa chỉ các hàm vào, cùng với giá trị để tính toán là a và bit_high
+```c
+int main(){
+  int a = 23 , b = 2;
+  void (*operator)(int,int);
+  Operator(Tong,a,b);
+  Operator(Hieu,a,b);
+  Operator(Tich,a,b);
+  Operator(Thuong,a,b);
+  return 0;
+}
+```
+CÁCH3
+- Ta cũng có thể tạo 1 mảng con trỏ hàm để trỏ tới từng địa chỉ của các hàm và sử dụng chúng như sau
+```c
+int main(){
+ void (*opeArr[])(int,int) = {Tong,Hieu,Tich,Thuong};
+    for(int n = 0 ; n < 4 ; n++){
+        opeArr[n](a,b);
+    }
+return 0;
+}
+```
+Ta truy xuất và gọi các hàm thông qua việc sử dụng chỉ số và tăng giá trịi của nó mỗi khi di chuyển đến địa chỉ và hàm tiếp theo
+
+Ứng dụng: Ta có thể dụng con trỏ hàm ứng dụng trong việc chọn hàm mà ta muốn xử lý ở những thời điểm khác nhau trong chương trình
+thông qua 1 con trỏ duy nhất, giúp tăng tốc và tiết keiemj thời gia mỗi hàm thông qua việ truy cập chúng bằng pointer
+
