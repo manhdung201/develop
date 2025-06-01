@@ -60,7 +60,7 @@ void printdata(int sensor){
   }
 ```
   - ở trong hàm main ta dùng 1 vòng lặp for để chạy chương trình với số lần nhật định và truyền vào đối số i + 1 cho biến số lần in ra hiện tại
-    của hàm update. Thực hiện chạy chương trình ta có kết quả:
+    của hàm update. Thực hiện chạy chương trình ta có kết quả:    
     ```c
     lan 1 = 25
     lan 2 = 26
