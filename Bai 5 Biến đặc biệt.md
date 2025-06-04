@@ -177,6 +177,35 @@ thái sẽ dược dùng để lưu sự kiện ngắt này. Trong chương tìn
 // Biến cờ được cập nhật bởi ngắt
 volatile bool button_pressed = false; // Khai báo volatile vì biến này thay đổi ngoài vòng lặp chính
 ```
+#### Định nghĩa 1 hàm ngắt giả lập
+```c
+void button_interrupt_handler() {
+    button_pressed = true; // thay đổi giá trị khi có tín hiệu ngắt
+}
+```
+#### Chương trình chính
+```c
+int main() {
+    while (1) {
+        // Kiểm tra trạng thái nut nhấn
+        if (button_pressed) {
+            // Reset cờ
+            button_pressed = false;
+            
+            // Xử lý sự kiện nhấn nút
+            printf("Button was pressed!\n");
+        }
+        for (volatile int i = 0; i < 100000; i++); // Chờ giả lập
+    }
+    return 0;
+}
+```
+NOTE: vì sao phải thêm volatile khi khai báo biến i trong vòng lặp for vì
+- Nếu không có volatile: compiler sẽ nhận ra rằng vòng for chỉ chạy 1 số lần nhất định và không làm gì bên trong vòng lặp, do đó nó có thể loại bỏ for
+- Nếu có volatile: compiler sẽ buộc phải luôn luôn thực hiện for. Volatile sẽ yêu cầu compiler đọc, ghi giá trị của i từ RAM trong mỗi lần lặp.
 
+# So sánh các từ khoá
+
+![image](https://github.com/user-attachments/assets/eb6fe0f8-42a5-4280-b8bc-58f24f645e2c)
 
     
